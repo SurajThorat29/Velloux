@@ -1,115 +1,224 @@
-// --- Mobile Menu Toggle ---
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const navLinksItems = document.querySelectorAll('.nav-links a');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-});
 
-// Close mobile menu when a link is clicked
-navLinksItems.forEach(item => {
-    item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.textContent = '☰';
-    });
-});
+        // REMOVE LOADER INTERFACE
+        window.addEventListener('load', () => {
+            const shield = document.getElementById('preloader');
+            shield.style.opacity = '0';
+            setTimeout(() => shield.style.display = 'none', 500);
+        });
 
-// --- Smooth Scrolling ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 70, // Offset for fixed header
-                behavior: 'smooth'
+        // --- CUSTOM KINETIC CURSOR ENGINE ---
+        const cursor = document.getElementById('custom-cursor');
+        let cursorVisible = false;
+
+        window.addEventListener('mousemove', (e) => {
+            if (!cursorVisible) {
+                cursor.style.opacity = '1';
+                cursorVisible = true;
+            }
+            cursor.animate({
+                left: `${e.clientX}px`,
+                top: `${e.clientY}px`
+            }, { duration: 100, fill: "forwards" });
+        });
+
+        window.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+            cursorVisible = false;
+        });
+
+        document.querySelectorAll('a, button, .service-block, .portfolio-card, .why-card, .process-node, .testimonial-card, .faq-accordion-node, .accordion-trigger, .pulse-ring, .contact-card-node, .contact-form-vault').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '45px';
+                cursor.style.height = '45px';
+                cursor.style.backgroundColor = 'rgba(0, 242, 254, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+
+        // --- ADVANCED NODE-GRID CANVAS ENGINE ---
+        const canvas = document.getElementById('interactive-particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let points = [];
+        const mouse = { x: null, y: null, radius: 140 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x; this.y = y;
+                this.baseX = x; this.baseY = y;
+                this.size = Math.random() * 2 + 0.5;
+                this.density = (Math.random() * 25) + 12;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 242, 254, 0.2)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.radius;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 15;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 15;
+                    }
+                }
+            }
+        }
+
+        function initParticles() {
+            points = [];
+            const count = Math.min(90, Math.floor(window.innerWidth / 14));
+            for (let i = 0; i < count; i++) {
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                points.push(new Particle(x, y));
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < points.length; i++) {
+                points[i].update();
+                points[i].draw();
+            }
+            for (let a = 0; a < points.length; a++) {
+                for (let b = a; b < points.length; b++) {
+                    let dx = points[a].x - points[b].x;
+                    let dy = points[a].y - points[b].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 110) {
+                        let alpha = (1 - (dist / 110)) * 0.06;
+                        ctx.strokeStyle = `rgba(0, 242, 254, ${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(points[a].x, points[a].y);
+                        ctx.lineTo(points[b].x, points[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        animateParticles();
+
+
+        // --- MOUSE TILT CONTROLLER ---
+        const tiltCards = document.querySelectorAll('.service-block');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - (rect.width / 2);
+                const y = e.clientY - rect.top - (rect.height / 2);
+                const degX = (y / (rect.height / 2)) * -12;
+                const degY = (x / (rect.width / 2)) * 12;
+                card.style.transform = `rotateX(${degX}deg) rotateY(${degY}deg) translateY(-8px)`;
+            });
+            card.style.transformStyle = 'preserve-3d';
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0)';
+            });
+        });
+
+        const heroMedia = document.getElementById('hero-media-tilt');
+        if(heroMedia) {
+            window.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth / 2 - e.clientX) / 35;
+                const y = (window.innerHeight / 2 - e.clientY) / 35;
+                heroMedia.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
             });
         }
-    });
-});
-
-// --- Scroll Animations (Intersection Observer) ---
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Only animate once
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// --- Form Validation & Submission Mock ---
-const contactForm = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Basic validation is handled by HTML 'required' attribute
-    // Here we simulate a successful submission
-    const btn = contactForm.querySelector('button');
-    const originalText = btn.textContent;
-    
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    setTimeout(() => {
-        contactForm.reset();
-        contactForm.style.display = 'none';
-        successMessage.style.display = 'block';
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }, 2500);
-});
-
-// --- Typing Animation ---
-const typingText = document.querySelector('.typing-text');
-const words = JSON.parse(typingText.getAttribute('data-words'));
-const wait = parseInt(typingText.getAttribute('data-wait'), 10);
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 100;
-
-function type() {
-    if (!typingText) return;
-    
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50; // Faster when deleting
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100; // Normal typing speed
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        typeSpeed = wait; // Pause at end of word
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500; // Pause before typing next word
-    }
-
-    setTimeout(type, typeSpeed);
-}
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    type();
-});
+        // --- HIGH-PERFORMANCE INTERSECTION OBSERVER FOR SCROLL REVEALS ---
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+
+
+        // --- SEO FAQ ENGINE ACCORDIONS ---
+        document.querySelectorAll('.faq-trigger-btn').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const node = trigger.parentElement;
+                const panel = trigger.nextElementSibling;
+                const isActive = node.classList.contains('active');
+                
+                document.querySelectorAll('.faq-accordion-node').forEach(n => {
+                    n.classList.remove('active');
+                    n.querySelector('.faq-panel-content').style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    node.classList.add('active');
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+
+
+        // --- SIDE ACCORDIONS (ABOUT SECTION) ---
+        document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const node = trigger.parentElement;
+                const panel = trigger.nextElementSibling;
+                const isActive = node.classList.contains('active');
+                
+                document.querySelectorAll('.accordion-node').forEach(n => {
+                    n.classList.remove('active');
+                    n.querySelector('.accordion-panel').style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    node.classList.add('active');
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+
+
+        // --- MODAL SYSTEM CONTROLS ---
+        const modal = document.getElementById('contact-modal');
+        document.querySelectorAll('.modal-trigger, #search-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => modal.classList.add('active'));
+        });
+        document.getElementById('modal-close-btn').addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
