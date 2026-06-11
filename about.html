@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- =========================================================
+  FILE: about.html
+========================================================= -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Velloux | Web Design & Development Agency in Pune, Maharashtra</title>
+    <meta name="description"
+        content="Learn about Velloux — Pune's trusted web design and development agency. We build high-performance websites for startups and businesses across Pune, Kharadi, Hinjewadi, Baner, and Pimpri-Chinchwad, Maharashtra.">
+    <meta name="keywords"
+        content="about Velloux, web agency Pune, web development team Pune, website designers Pune, Pune web company, Maharashtra web agency">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Pune, Maharashtra, India">
+    <meta name="geo.position" content="18.5204;73.8567">
+    <link rel="canonical" href="https://www.velloux.in/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Velloux | Web Design & Development Agency in Pune">
+    <meta property="og:description"
+        content="Velloux is a premier web design and development agency in Pune, Maharashtra. High-performance websites for businesses across Pune.">
+    <meta property="og:url" content="https://www.velloux.in/about.html">
+    <meta property="og:image" content="https://www.velloux.in/photo and video/about us.png">
+    <meta property="og:site_name" content="Velloux">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Velloux | Web Agency Pune">
+    <meta name="twitter:description"
+        content="Pune's trusted web design and development agency building high-performance websites.">
+    <meta name="twitter:image" content="https://www.velloux.in/photo and video/about us.png">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://www.velloux.in/about.html",
+        "url": "https://www.velloux.in/about.html",
+        "name": "About Velloux — Web Development Agency Pune",
+        "description": "Velloux is a Pune-based web design and development agency specializing in custom websites, e-commerce, and UI/UX for businesses across Maharashtra.",
+        "publisher": {"@id": "https://www.velloux.in/#business"},
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.velloux.in/"},
+            {"@type": "ListItem", "position": 2, "name": "About", "item": "https://www.velloux.in/about.html"}
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.velloux.in/#business",
+        "name": "Velloux",
+        "url": "https://www.velloux.in/",
+        "logo": "https://www.velloux.in/photo and video/inverted logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        }
+      }
+    ]
+  }
+  </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* ============================================================
+           ABOUT PAGE — SCOPED STYLES
+           All design tokens & resets come from style.css (global).
+        ============================================================ */
+
+        .page-wrapper {
+            padding-top: 90px;
+        }
+
+        /* ── HERO ── */
+        .about-hero {
+            min-height: 52vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 8% 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .about-hero::after {
+            content: 'ABOUT';
+            position: absolute;
+            font-size: 20vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.018);
+            letter-spacing: 12px;
+            user-select: none;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .cyber-badge {
+            display: inline-block;
+            color: var(--accent-cyan);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            background: rgba(0, 242, 254, 0.05);
+            padding: 6px 18px;
+            border-radius: 3px;
+            margin-bottom: 24px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.12;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--accent-cyan) 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyan), transparent);
+            margin: 30px auto 0;
+        }
+
+        /* ── BREADCRUMB ── */
+        .breadcrumb-bar {
+            padding: 12px 8%;
+            max-width: 1440px;
+            margin: 0 auto;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-bar a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .breadcrumb-bar span {
+            color: var(--accent-cyan);
+            margin: 0 8px;
+        }
+
+        /* ── WHO WE ARE ── */
+        .about-split-section {
+            padding: 100px 8%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text-block h2 {
+            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-text-block h2 span {
+            color: var(--accent-cyan);
+        }
+
+        .lead-text {
+            font-size: 1.05rem;
+            color: var(--text-pure);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .about-text-block p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .about-text-block p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .about-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            background: rgba(0, 242, 254, 0.04);
+            padding: 5px 14px;
+            border-radius: 3px;
+        }
+
+        /* Image block */
+        .about-image-block {
+            position: relative;
+        }
+
+        .glass-image-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(12, 13, 15, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--glass-border);
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+
+        .glass-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.07) 0%, rgba(9, 30, 41, 0.6) 40%, rgba(3, 3, 5, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .about-fluid-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 0;
+        }
+
+        .img-corner-accent {
+            position: absolute;
+            bottom: -18px;
+            right: -18px;
+            width: 80px;
+            height: 80px;
+            border-right: 2px solid rgba(0, 242, 254, 0.35);
+            border-bottom: 2px solid rgba(0, 242, 254, 0.35);
+            border-radius: 0 0 8px 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .img-corner-accent-tl {
+            position: absolute;
+            top: -18px;
+            left: -18px;
+            width: 80px;
+            height: 80px;
+            border-left: 2px solid rgba(0, 242, 254, 0.18);
+            border-top: 2px solid rgba(0, 242, 254, 0.18);
+            border-radius: 8px 0 0 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .img-placeholder-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            gap: 12px;
+        }
+
+        .img-placeholder-overlay i {
+            font-size: 3rem;
+            color: rgba(0, 242, 254, 0.2);
+        }
+
+        .img-placeholder-overlay span {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ── SERVICE AREAS STRIP ── */
+        .service-areas-section {
+            padding: 0 8% 90px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .service-areas-inner {
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 36px 40px;
+            background: rgba(255, 255, 255, 0.01);
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .areas-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            white-space: nowrap;
+            padding-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .areas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .area-chip {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .area-chip:hover {
+            color: var(--accent-cyan);
+            border-color: rgba(0, 242, 254, 0.3);
+            background: rgba(0, 242, 254, 0.04);
+        }
+
+        /* ── PILLARS ── */
+        .pillars-section {
+            padding: 100px 8%;
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pillars-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border) 30%, var(--glass-border) 70%, transparent);
+        }
+
+        .section-title-center {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title-center h2 {
+            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .section-title-center p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 44px 34px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.05) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .pillar-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 242, 254, 0.02);
+        }
+
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 242, 254, 0.06);
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 26px;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            transition: var(--transition-smooth);
+        }
+
+        .pillar-card:hover .pillar-icon {
+            background: rgba(0, 242, 254, 0.1);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+        }
+
+        /* ── WHY PUNE BUSINESSES CHOOSE US ── */
+        .why-pune-section {
+            padding: 0 8% 100px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .why-pune-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .why-pune-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px 28px;
+            transition: var(--transition-smooth);
+        }
+
+        .why-pune-card:hover {
+            border-color: rgba(0, 242, 254, 0.2);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .why-pune-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            color: var(--text-pure);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .why-pune-card h3 i {
+            color: var(--accent-cyan);
+            font-size: 0.95rem;
+        }
+
+        .why-pune-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        /* ── STATS ── */
+        .stats-counter-section {
+            padding: 0 8% 100px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .stats-counter-section .stats-grid {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.04) 0%, rgba(12, 13, 15, 0.8) 50%, rgba(0, 242, 254, 0.02) 100%);
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3), inset 0 0 60px rgba(0, 242, 254, 0.02);
+        }
+
+        .stats-counter-section .stat-number {
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            background: linear-gradient(135deg, var(--accent-cyan), #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── CTA STRIP ── */
+        .cta-strip {
+            padding: 0 8% 100px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .cta-inner {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.06) 0%, rgba(12, 13, 15, 0.4) 100%);
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            border-radius: 16px;
+            padding: 60px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .cta-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ── FOOTER ── */
+        .glass-footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 32px 8%;
+            text-align: center;
+            background: rgba(5, 5, 6, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── HEADER ── */
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1440px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.2));
+            transition: var(--transition-smooth);
+        }
+
+        .logo img:hover {
+            filter: drop-shadow(0 0 22px rgba(0, 242, 254, 0.5));
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .about-tags {
+                justify-content: center;
+            }
+
+            .about-image-block {
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            .why-pune-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+            }
+
+            .cta-text p {
+                margin: 0 auto;
+            }
+
+            .cta-actions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: clamp(1.9rem, 8vw, 2.6rem);
+            }
+
+            .about-split-section,
+            .pillars-section,
+            .stats-counter-section,
+            .service-areas-section,
+            .why-pune-section,
+            .cta-strip {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .stats-counter-section .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stat-item {
+                padding: 10px 0;
+                border-bottom: 1px solid var(--glass-border);
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .service-areas-inner {
+                flex-direction: column;
+                gap: 16px;
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="interactive-particle-canvas"></canvas>
+    <div id="custom-cursor"></div>
+
+    <!-- ── GLOBAL HEADER ── -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html#home" class="logo">
+                <img src="photo and video/inverted logo.png" alt="Velloux Web Design Agency Pune Logo">
+            </a>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="active"><a href="about.html" aria-current="page">About</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#services">Services <i class="fa-solid fa-chevron-down"
+                                style="font-size:0.7rem;margin-left:3px;" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="website-development-pune.html">Website Development</a></li>
+                            <li><a href="website-redesign-pune.html">Website Redesign</a></li>
+                            <li><a href="ecommerce-development-pune.html">E-Commerce Dev</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#why-choose-us">Why Us</a></li>
+                    <li><a href="index.html#process">Process</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper" id="main-content">
+
+        <!-- BREADCRUMB (SEO + accessibility) -->
+        <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span aria-hidden="true">›</span>
+            <a href="about.html" aria-current="page">About Us</a>
+        </nav>
+
+        <!-- ── SECTION 1: HERO ── -->
+        <section class="about-hero" aria-labelledby="about-hero-heading">
+            <div class="hero-inner">
+                <span class="cyber-badge">Web Design Agency · Pune, Maharashtra</span>
+                <h1 id="about-hero-heading">
+                    Pune's Premier<br>
+                    <span class="text-gradient">Web Design & Development</span><br>
+                    Studio
+                </h1>
+                <p>Velloux is a Pune-based web design and development agency specialising in high-performance websites,
+                    custom UI/UX design, and scalable e-commerce platforms — built for businesses across Pune,
+                    Pimpri-Chinchwad, Kharadi, Hinjewadi, and all of Maharashtra.</p>
+                <div class="hero-divider" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- ── SECTION 2: WHO WE ARE ── -->
+        <section class="about-split-section" aria-labelledby="who-we-are-heading">
+            <div class="about-split">
+
+                <div class="about-text-block reveal">
+                    <span class="section-tag">Based in Pune, Maharashtra</span>
+                    <h2 id="who-we-are-heading">Who <span>We Are</span></h2>
+                    <p class="lead-text">Velloux is a full-service web design and development company in Pune,
+                        Maharashtra — building premium digital platforms that outperform the competition for startups
+                        and enterprises alike.</p>
+                    <p>We don't just assemble templates. Our Pune-based team engineers tailor-made, high-performance web
+                        applications built on robust frontend and backend architectures. By combining advanced design
+                        methodologies like glassmorphism with pixel-perfect responsive layouts, we give businesses
+                        across Pune an unforgettable digital footprint.</p>
+                    <p>From early-stage startups in Kharadi and Hinjewadi IT Park to established enterprises in Baner,
+                        Wakad, and Viman Nagar seeking comprehensive website redesigns — we deliver scalable,
+                        SEO-optimised web assets built to last and rank.</p>
+                    <p>Our agency operates at the intersection of modern aesthetics and rigorous technical engineering,
+                        making us the trusted web design partner for businesses across Pimpri-Chinchwad Municipal
+                        Corporation (PCMC) and greater Pune.</p>
+                    <div class="about-tags">
+                        <span class="about-tag">Pune, MH</span>
+                        <span class="about-tag">UI/UX Design</span>
+                        <span class="about-tag">Web Architecture</span>
+                        <span class="about-tag">SEO Optimised</span>
+                        <span class="about-tag">E-Commerce</span>
+                        <span class="about-tag">Performance Engineering</span>
+                    </div>
+                </div>
+
+                <div class="about-image-block reveal reveal-delay-2">
+                    <div class="glass-image-wrapper">
+                        <img src="https://in.pinterest.com/pin/111464159524522037/"
+                            alt="Velloux web design studio workspace in Pune, Maharashtra" class="about-fluid-img"
+                            width="600" height="450" loading="lazy" onerror="this.style.display='none'">
+                        <div class="img-placeholder-overlay" aria-hidden="true">
+                            <i class="fa-solid fa-display"></i>
+                            <span>Velloux · Pune Studio</span>
+                        </div>
+                    </div>
+                    <div class="img-corner-accent" aria-hidden="true"></div>
+                    <div class="img-corner-accent-tl" aria-hidden="true"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── SECTION 3: SERVICE AREAS (GEO-TARGETING) ── -->
+        <section class="service-areas-section reveal" aria-label="Service areas across Pune">
+            <div class="service-areas-inner">
+                <p class="areas-label">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp;&nbsp;
+                    We Serve
+                </p>
+                <div class="areas-grid" role="list">
+                    <span class="area-chip" role="listitem">Pune City</span>
+                    <span class="area-chip" role="listitem">Pimpri-Chinchwad (PCMC)</span>
+                    <span class="area-chip" role="listitem">Kharadi</span>
+                    <span class="area-chip" role="listitem">Hinjewadi IT Park</span>
+                    <span class="area-chip" role="listitem">Baner</span>
+                    <span class="area-chip" role="listitem">Wakad</span>
+                    <span class="area-chip" role="listitem">Viman Nagar</span>
+                    <span class="area-chip" role="listitem">Koregaon Park</span>
+                    <span class="area-chip" role="listitem">Hadapsar</span>
+                    <span class="area-chip" role="listitem">Shivaji Nagar</span>
+                    <span class="area-chip" role="listitem">Aundh</span>
+                    <span class="area-chip" role="listitem">Magarpatta</span>
+                    <span class="area-chip" role="listitem">Mumbai, Maharashtra</span>
+                    <span class="area-chip" role="listitem">Pan India (Remote)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECTION 4: ENGINEERING CORE PILLARS ── -->
+        <section class="pillars-section" aria-labelledby="pillars-heading">
+            <div class="section-title-center reveal">
+                <span class="section-tag">Our Expertise</span>
+                <h2 id="pillars-heading">Our Engineering Core</h2>
+                <p>The foundational principles baked into every website we design and develop for businesses in Pune and
+                    beyond.</p>
+            </div>
+            <div class="pillars-grid">
+
+                <article class="pillar-card reveal reveal-delay-1">
+                    <div class="pillar-icon" aria-hidden="true">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Modern UI/UX Design</h3>
+                    <p>Our Pune-based UI/UX designers specialise in modern design language, 3D interactive components,
+                        and immersive visual storytelling. We craft interfaces that drive engagement and lift conversion
+                        rates for Pune businesses competing in the digital space.</p>
+                </article>
+
+                <article class="pillar-card reveal reveal-delay-2">
+                    <div class="pillar-icon" aria-hidden="true">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Web Performance & Architecture</h3>
+                    <p>Every website we develop in Pune is built on clean semantic code with lightweight script engines
+                        — targeting Core Web Vitals scores above 90, near-instant page loads, and top search rankings on
+                        Google India for competitive Pune and PCMC markets.</p>
+                </article>
+
+                <article class="pillar-card reveal reveal-delay-3">
+                    <div class="pillar-icon" aria-hidden="true">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Secure & Scalable Frameworks</h3>
+                    <p>We harden all digital assets against vulnerabilities, apply strict performance optimisations, and
+                        integrate third-party APIs seamlessly — delivering secure, scalable web platforms built to grow
+                        with your Pune business.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ── SECTION 5: WHY PUNE BUSINESSES CHOOSE VELLOUX ── -->
+        <section class="why-pune-section" aria-labelledby="why-pune-heading">
+            <div class="section-title-center reveal">
+                <span class="section-tag">Local Advantage</span>
+                <h2 id="why-pune-heading">Why Pune Businesses Choose Velloux</h2>
+                <p>A local Pune agency that understands the Maharashtra market — with the technical depth to compete
+                    globally.</p>
+            </div>
+            <div class="why-pune-grid">
+
+                <div class="why-pune-card reveal reveal-delay-1">
+                    <h3><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Locally Rooted in Pune</h3>
+                    <p>We are a Pune-based web design studio with deep roots in the local business ecosystem — from
+                        Hinjewadi's IT corridor to Kharadi's tech hub and PCMC's manufacturing belt. We understand
+                        Pune's market dynamics, local customer behaviour, and regional competitive landscape.</p>
+                </div>
+
+                <div class="why-pune-card reveal reveal-delay-2">
+                    <h3><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> SEO for Pune & Maharashtra
+                    </h3>
+                    <p>Our websites are engineered for local SEO from the ground up — structured data markup,
+                        geo-targeted meta tags, Google Business optimisation, and content strategies that help you rank
+                        for high-intent searches like "web design agency Pune" and "website development
+                        Pimpri-Chinchwad."</p>
+                </div>
+
+                <div class="why-pune-card reveal reveal-delay-1">
+                    <h3><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Mobile-First for India</h3>
+                    <p>With India's dominant mobile internet usage, we build every website mobile-first — optimised for
+                        the connectivity patterns and device preferences of users across Maharashtra and India, ensuring
+                        your brand performs on every screen size.</p>
+                </div>
+
+                <div class="why-pune-card reveal reveal-delay-2">
+                    <h3><i class="fa-solid fa-handshake" aria-hidden="true"></i> Transparent, Direct Collaboration</h3>
+                    <p>As a Pune-based agency, we offer face-to-face meetings, direct communication with your dedicated
+                        design team, and full project transparency — no outsourcing, no black boxes, no surprises. Just
+                        clean, accountable web development delivered on time.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── SECTION 6: STATS ── -->
+        <section class="stats-counter-section" aria-label="Key performance metrics">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <span class="stat-number" aria-label="99 percent">99%</span>
+                    <span class="stat-label">Performance Optimisation Score (Core Web Vitals)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" aria-label="100 percent">100%</span>
+                    <span class="stat-label">Bespoke, Scalable Codebases — Zero Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Security Monitoring & Infrastructure Focus</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SECTION 7: CTA ── -->
+        <section class="cta-strip" aria-labelledby="cta-heading">
+            <div class="cta-inner reveal">
+                <div class="cta-text">
+                    <h2 id="cta-heading">Ready to Build Your Digital Presence in Pune?</h2>
+                    <p>Whether you're a startup in Hinjewadi, an SME in Pimpri-Chinchwad, or an enterprise brand looking
+                        to dominate search results across Maharashtra — Velloux has the expertise to deliver.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cyan">Start Your Project</a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-footer">
+        <p>&copy; 2026 Velloux — Web Design & Development Agency, Pune, Maharashtra, India. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            const els = document.querySelectorAll('.reveal');
+            if (!els.length) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        observer.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+
+</html>
